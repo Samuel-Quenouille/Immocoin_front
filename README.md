@@ -5,7 +5,7 @@
 Réaliser une marketplace où les gens pourront poster des annonces immobilières.
 
 ### Le projet
-#### 👩🏽‍🤝‍👨🏼🧍🏻‍♀️ Travail en équipe
+### 👩🏽‍🤝‍👨🏼🧍🏻‍♀️ Travail en équipe
 Utiliser deux techniques de gestion de projet :
 - Trello
 - Lucid (créer les bases de donnée)
