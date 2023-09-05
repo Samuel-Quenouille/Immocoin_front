@@ -6,11 +6,14 @@ export default function CreatePost() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
+  const [image, setImage] = useState('');
+  const [zip_code, setZipCode] = useState('');
+  const [city, setCity] = useState('');
   const [user] = useAtom(userAtom);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
-  }
+  };
 
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value);
@@ -18,6 +21,18 @@ export default function CreatePost() {
 
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
+  };
+
+  const handleImageChange = (event) => {
+    setImage(event.target.value);
+  }
+
+  const handleZipCodeChange = (event) => {
+    setZipCode(event.target.value);
+  }
+
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
   }
 
   const handleSubmit = async (event) => {
@@ -28,6 +43,9 @@ export default function CreatePost() {
         title: title,
         description: description,
         price: price,
+        image: image,
+        zip_code: zip_code,
+        city: city,
         user_id: user.id,
       }
     };
@@ -78,6 +96,30 @@ export default function CreatePost() {
             id="price"
             value={price}
             onChange={handlePriceChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="image">Image :</label>
+          <textarea
+            id="image"
+            value={image}
+            onChange={handleImageChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="zip_code">Code Postal :</label>
+          <textarea
+            id="zip_code"
+            value={zip_code}
+            onChange={handleZipCodeChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="city">Ville :</label>
+          <textarea
+            id="city"
+            value={city}
+            onChange={handleCityChange}
           />
         </div>
         <button type="submit">Créer l'annonce</button>
