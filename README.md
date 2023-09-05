@@ -2,9 +2,11 @@
 #### Projet crash-test
 
 ### 👩🏽‍💻 Introduction
-Réaliser une marketplace où les gens pourront poster des annonces immobilières.
+Réaliser une marketplace où les gens pourront poster des annonces immobilières. 
 
 ### Le projet
+Le projet doit contenir une app Rails et une app React.
+
 ### 👩🏽‍🤝‍👨🏼🧍🏻‍♀️ Travail en équipe
 Utiliser deux techniques de gestion de projet :
 - Trello
