@@ -7,7 +7,7 @@ export default function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     return (
-        <navbar>
+        <nav>
             <div className="navbar">
                 <div className="links">
                 <Link to="/">Home</Link>
@@ -17,6 +17,6 @@ export default function Navbar() {
                 </div>
             {isLoggedIn && <Logout />}
             </div>
-        </navbar>
+        </nav>
     )
 }
