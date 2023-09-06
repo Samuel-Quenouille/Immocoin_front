@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import PostList from '../components/PostList';
+import PropertiesList from '../components/PropertiesList';
 
 export default function Home() {
 
@@ -13,7 +13,7 @@ export default function Home() {
                 <Link to="/createpost">Créer une annonce</Link>
             </div>
             <div className="container">
-                <PostList />
+                <PropertiesList />
             </div>
         </header>
 

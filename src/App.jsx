@@ -9,7 +9,6 @@ import Property from "./components/Property"
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
-
 import CreatePost from './components/CreatePost';
 
 
@@ -39,7 +38,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/createpost" element={<CreatePost />} />
-          <Route path="/:propertySlug" element={<Property />} />
+          <Route path="/annonces/:propertyId" element={<Property />} />
         </Routes>
       </BrowserRouter>
     </>
