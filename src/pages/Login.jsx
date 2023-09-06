@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { useAtom } from 'jotai';
 import { userAtom } from '../atom';
 import Cookies from 'js-cookie';
@@ -9,6 +10,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -34,6 +36,8 @@ export default function Login() {
 
         Cookies.set('token', response.headers.get("Authorization"));
         Cookies.set('id', data.user.id);
+
+        navigate('/')
 
         setUser({
           isLoggedIn: true,

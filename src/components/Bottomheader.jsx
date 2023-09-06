@@ -10,7 +10,7 @@ export default function BottomHeader() {
         <p className=''>Ça se passe par ici :</p>
 
         <button className="abtn yellowbtn">
-          <Link to="#" className="btn">
+          <Link to="/createpost" className="btn">
             Publier mon annonce
           </Link>
         </button> 
