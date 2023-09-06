@@ -5,11 +5,15 @@ import { useAtom } from 'jotai';
 import { userAtom } from './atom';
 import Cookies from 'js-cookie';
 import Navbar from "./components/Navbar"
+import Header from "./components/Header"
+import Bottomheader from "./components/Bottomheader"
 import Property from "./components/Property"
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import CreatePost from './components/CreatePost';
+import './index.css'
+import logo_Immocoin from './assets/logo_Immocoin.png'
 
 
 export default function App() {
@@ -32,7 +36,12 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
+        <div className="logo-container center my-4">
+          <img src={logo_Immocoin} alt="Logo ImmoCoin" style={{ width: '250px', height: 'auto' }} />
+        </div>
         <Navbar />
+        <Header />
+        <Bottomheader/>
         <Routes>
         <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
