@@ -20,7 +20,10 @@ export default function CreatePost() {
   };
 
   const handlePriceChange = (event) => {
-    setPrice(event.target.value);
+    const inputValue = event.target.value;
+    const numericValue = inputValue.replace(/\D/g, ''); // Supprime tous les caractères non numériques
+
+  setPrice(numericValue);
   };
 
   const handleImageChange = (event) => {
@@ -29,6 +32,7 @@ export default function CreatePost() {
 
   const handleZipCodeChange = (event) => {
     setZipCode(event.target.value);
+    
   }
 
   const handleCityChange = (event) => {
@@ -71,12 +75,13 @@ export default function CreatePost() {
   };
 
   return (
-    <div>
+    <div className="create_post container">
       <h2>Création d'une annonce</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Titre :</label>
-          <textarea
+          <br></br>
+          <input
             id="title"
             value={title}
             onChange={handleTitleChange}
@@ -84,6 +89,7 @@ export default function CreatePost() {
         </div>
         <div>
           <label htmlFor="description">Description :</label>
+          <br></br>
           <textarea
             id="description"
             value={description}
@@ -92,23 +98,17 @@ export default function CreatePost() {
         </div>
         <div>
           <label htmlFor="price">Prix :</label>
-          <textarea
+          <br></br>
+          <input
             id="price"
             value={price}
             onChange={handlePriceChange}
           />
         </div>
         <div>
-          <label htmlFor="image">Image :</label>
-          <textarea
-            id="image"
-            value={image}
-            onChange={handleImageChange}
-          />
-        </div>
-        <div>
           <label htmlFor="zip_code">Code Postal :</label>
-          <textarea
+          <br></br>
+          <input
             id="zip_code"
             value={zip_code}
             onChange={handleZipCodeChange}
@@ -116,12 +116,24 @@ export default function CreatePost() {
         </div>
         <div>
           <label htmlFor="city">Ville :</label>
-          <textarea
+          <br></br>
+          <input
             id="city"
             value={city}
             onChange={handleCityChange}
           />
         </div>
+        <div>
+        <label htmlFor="image" className="custom-file-label">choisir image </label>
+        <br />
+          <input
+            id="image"
+            type="file"
+            value={image}
+            onChange={handleImageChange}
+          />
+        </div>
+        <br></br>
         <button type="submit">Créer l'annonce</button>
       </form>
     </div>
