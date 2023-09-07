@@ -7,7 +7,6 @@ import '../index.css'
 export default function Navbar() {
   const [user] = useAtom(userAtom)
 
-
   return (
     <nav className="navbar navbar-expand-lg p-2 mt-2">
       <div className="container-fluid navbar">
@@ -24,11 +23,11 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Accueil
-              </Link>
-            </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              Accueil
+            </Link>
+          </li>
             {user.isLoggedIn ? (
               <>
                 <li>
@@ -49,7 +48,7 @@ export default function Navbar() {
                 </li>
               </>
             )}
-          </ul>
+        </ul>
       </div>
     </nav>
   );
