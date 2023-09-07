@@ -5,6 +5,7 @@ import { useAtom } from 'jotai';
 import { userAtom } from './atom';
 import Cookies from 'js-cookie';
 import Navbar from "./components/Navbar"
+import Footer from './components/Footer';
 import Property from "./components/Property"
 import Home from './pages/Home';
 import Register from './pages/Register';
@@ -45,6 +46,7 @@ export default function App() {
           <Route path="/createpost" element={<CreatePost />} />
           <Route path="/annonces/:propertyId" element={<Property />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   )
