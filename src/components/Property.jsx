@@ -1,13 +1,16 @@
+import { useAtom } from 'jotai';
+import { userAtom } from '../atom';
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom'
+import DeletePost from '../components/DeletePost';
 
 export default function Property() {
 
-    const {propertyId} = useParams();
-    const [property, setProperty] = useState('');
+  const {propertyId} = useParams();
+  const [property, setProperty] = useState('');
+  const [user] = useAtom(userAtom);
 
-
-    useEffect(() => {
+      useEffect(() => {
         const fetchData = async () => {
           try {
             const response = await fetch(`http://localhost:3000/properties/${propertyId}`, {
@@ -32,7 +35,29 @@ export default function Property() {
     
         fetchData();
       }, [propertyId]);
-    
+
+      const handleDelete = async (deletedPropertyId) => {
+        // Mettez ici la logique de suppression de la propriété
+        try {
+          const response = await fetch(`http://localhost:3000/properties/${deletedPropertyId}`, {
+            method: 'DELETE',
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          });
+      
+          if (response.ok) {
+            console.log('Votre annonce a été supprimée avec succès');
+            onDelete(propertyId);
+            // Vous pouvez mettre à jour l'état ou rediriger l'utilisateur après la suppression
+          } else {
+            console.error("Erreur lors de la suppression de l'annonce");
+          }
+        } catch (error) {
+          console.error("Erreur lors de la suppression de l'annonce :", error);
+        }
+      };
+      
       if (!property) {
         return <div>Loading...</div>; // Affichez un message de chargement en attendant la récupération des données
       }
@@ -40,12 +65,15 @@ export default function Property() {
     return (
         <div className="property_ad container">
             <h1>{property.title}</h1>
+
             <h3>{property.city}, {property.zip_code}</h3>
             <img src={property.imageUrl} alt={property.title} />
             <p className="description" dangerouslySetInnerHTML={{ __html: property.description }} />
             <p className="property_price">Prix TTC : {property.price} €</p>
             <br></br>
             <button type="submit">Contacter le propriétaire</button>
+            <DeletePost propertyId={propertyId} onDelete={handleDelete} property={property}/>
+
         </div>
     )
 }
