@@ -25,6 +25,9 @@ Faire des merge uniquement avec l'outil de Pull Request de GitHub.
 ### 🔮 Base de données
 https://lucid.app/lucidspark/5f112485-f167-409b-bcf5-9c817e3b2059/edit?view_items=3NPr-VFY..Z4&invitationId=inv_14d013ef-461b-49e6-ad25-9cdba741b80b
 
+### Maquette
+https://www.figma.com/file/3ii6iV5rIis4fCUubDN3QX/Untitled?type=design&node-id=0-1&mode=design&t=bJZOZdwxKyX9SGq5-0
+
 ### Rendu attendu
 Un rendu fullstack utilisant React et Rails. Le code doit être le plus propre possible.
 
