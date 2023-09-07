@@ -128,6 +128,36 @@
   background-color: #EFEF45;
 }
 
+/************* sign-in *****************/ 
+.form_signin h2 {
+  margin-bottom: 40px; 
+}
+
+.form_signin{
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  padding-top: 150px;
+  line-height: 1.8;
+}
+
+.form_signin input {
+  margin-bottom: 30px; 
+  width: 30%;
+}
+
+.form_signin button {
+  margin: 15px;
+  border: transparent;
+  background-color: #cfcece;
+  transition: background-color 0.3s; /* Ajoute une transition pour une animation en douceur */
+  width: 30%;
+}
+
+.form_signin button:hover {
+  background-color: #EFEF45;
+}
+
 
 
 

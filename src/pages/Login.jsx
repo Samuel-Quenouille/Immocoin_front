@@ -51,24 +51,30 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="form_signin container">
       <form onSubmit={handleLogin}>
         <h2>Se connecter</h2>
         {error && <p>{error}</p>}
+        <div>
+        <label htmlFor="email">Email :</label>
+        <br></br>
         <input
           type="text"
-          placeholder="Adresse email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+        </div>
+        <div>
+        <label htmlFor="password">Mot de passe :</label>
+        <br></br>
         <input
           type="password"
-          placeholder="Mot de passe"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        </div>
         <button type="submit">Se connecter</button>
       </form>
     </div>
