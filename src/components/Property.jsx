@@ -38,9 +38,14 @@ export default function Property() {
       }
 
     return (
-        <div className="properties">
+        <div className="property_ad container">
             <h1>{property.title}</h1>
-            <p dangerouslySetInnerHTML={{ __html: property.description }} />
+            <h3>{property.city}, {property.zip_code}</h3>
+            <img src={property.imageUrl} alt={property.title} />
+            <p className="description" dangerouslySetInnerHTML={{ __html: property.description }} />
+            <p className="property_price">Prix TTC : {property.price} €</p>
+            <br></br>
+            <button type="submit">Contacter le propriétaire</button>
         </div>
     )
 }
