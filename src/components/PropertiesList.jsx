@@ -33,6 +33,7 @@ export default function PropertiesList() {
           <p>{property.id}</p>
           {console.log(property.id)}
           <Link to={`/annonces/${property.id}`}>Lire l'annonce</Link>
+          
         </div>
       ))}
     </div>

@@ -97,4 +97,38 @@
     font-family: 'Inter', sans-serif;
     font-family: 'Poppins', sans-serif;
   }
-  
+
+/************* sign-up *****************/  
+.form_signup h2 {
+  margin-bottom: 40px; 
+}
+
+.form_signup{
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  padding-top: 150px;
+  line-height: 1.8;
+}
+
+.form_signup input {
+  margin-bottom: 30px; 
+  width: 30%;
+}
+
+.form_signup button {
+  margin: 15px;
+  border: transparent;
+  background-color: #cfcece;
+  transition: background-color 0.3s; /* Ajoute une transition pour une animation en douceur */
+  width: 30%;
+}
+
+.form_signup button:hover {
+  background-color: #EFEF45;
+}
+
+
+
+
+

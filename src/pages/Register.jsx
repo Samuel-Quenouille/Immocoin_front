@@ -48,11 +48,13 @@ export default function SignupForm() {
   };
 
   return (
+    <div className="form_signup container">
     <form onSubmit={handleSubmit}>
-      <h2>Créer un compte</h2>
+      <h2>S'inscrire</h2>
       {error && <p>{error}</p>}
       <div>
         <label htmlFor="email">Email :</label>
+        <br></br>
         <input
           type="email"
           id="email"
@@ -63,6 +65,7 @@ export default function SignupForm() {
       </div>
       <div>
         <label htmlFor="password">Mot de passe :</label>
+        <br></br>
         <input
           type="password"
           id="password"
@@ -73,6 +76,7 @@ export default function SignupForm() {
       </div>
       <div>
         <label htmlFor="password">Confirme ton mot de passe :</label>
+        <br></br>
         <input
           type="password"
           id="password"
@@ -81,7 +85,8 @@ export default function SignupForm() {
           required
         />
       </div>
-      <button type="submit">Créer un compte et se connecter</button>
+      <button type="submit">Créer un compte</button>
     </form>
+    </div>
   );
 }
