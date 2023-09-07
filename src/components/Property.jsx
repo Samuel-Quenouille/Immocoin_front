@@ -72,8 +72,14 @@ export default function Property() {
             <p className="property_price">Prix TTC : {property.price} €</p>
             <br></br>
             <button type="submit">Contacter le propriétaire</button>
-            <DeletePost propertyId={propertyId} onDelete={handleDelete} property={property}/>
-
+            {user.isLoggedIn ? (
+              <>
+              <DeletePost propertyId={propertyId} onDelete={handleDelete} property={property}/>
+              </>
+            ) : (
+              <>
+              </>
+            )}
         </div>
     )
 }

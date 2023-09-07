@@ -32,11 +32,9 @@ export default function PropertiesList() {
       <h2 className="text-center">Liste des annonces :</h2>
       {properties.map((property) => (
         <div className="list-properties" key={property.id}>
-          <h2>{property.title}</h2>
-          <p>{property.description}</p>
-          <p>{property.price}</p>
-          <p>{property.id}</p>
-          {console.log(property.id)}
+          <h4>{property.title}</h4>
+          <h2>{property.price} €</h2>
+          <p>{property.city} - {property.zip_code}</p>
           <Link to={`/annonces/${property.id}`}>Lire l'annonce</Link>
           
         </div>
