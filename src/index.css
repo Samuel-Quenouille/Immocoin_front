@@ -109,6 +109,7 @@
   text-align: center;
   padding-top: 150px;
   line-height: 1.8;
+  margin-left: 5%;
 }
 
 .form_signup input {
@@ -139,6 +140,7 @@
   text-align: center;
   padding-top: 150px;
   line-height: 1.8;
+  margin-left: 5%;
 }
 
 .form_signin input {
@@ -156,6 +158,65 @@
 
 .form_signin button:hover {
   background-color: #EFEF45;
+}
+
+
+/************* form-property *****************/
+.create_post h2{
+  margin-bottom: 40px; 
+  }
+  
+.create_post{
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  padding-top: 150px;
+  line-height: 1.8;
+  margin-left: 5%;
+} 
+
+.create_post input{
+margin-bottom: 30px; 
+width: 30%;
+}
+
+.custom-file-input {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+input[type="file"] {
+  display: none; /* Masque l'input d'origine */
+}
+
+.custom-file-label {
+  background-color: #EFEF45;
+  color:#232323;
+  padding: 8px 20px; /* Espacement intérieur du bouton */
+  cursor: pointer; 
+}
+
+.custom-file-label:hover {
+  background-color: #cfcece;
+}
+
+
+.create_post textarea{
+  margin-bottom: 30px; 
+  width: 30%;
+  }
+
+.create_post button{
+  margin: 15px;
+  border: transparent;
+  background-color: #cfcece;
+  transition: background-color 0.3s;
+  width: 30%;
+}
+
+.create_post button:hover{
+background-color: #EFEF45;
 }
 
 /************* property *****************/
@@ -209,7 +270,4 @@
 .property_ad button:hover {
   background-color: #EFEF45;
 }
-
-
-
 
