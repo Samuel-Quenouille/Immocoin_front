@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {Link} from 'react-router-dom';
 
 export default function PropertiesList() {
   const [properties, setProperties] = useState([]);
+  const propertiesRef = useRef(null);
 
   useEffect(() => {
     const fetchPosts = () => {
@@ -16,6 +17,10 @@ export default function PropertiesList() {
         .then((responseData) => {
           setProperties(responseData);
           console.log(responseData[2].title);
+
+          if (propertiesRef.current) {
+            propertiesRef.current.scrollIntoView({ behavior: "smooth" });
+          }
         });
     };
 
@@ -23,7 +28,7 @@ export default function PropertiesList() {
   }, []);
 
   return (
-    <div>
+    <div ref={propertiesRef} className="properties-section">
       <h2 className="text-center">Liste des annonces :</h2>
       {properties.map((property) => (
         <div className="list-properties" key={property.id}>
