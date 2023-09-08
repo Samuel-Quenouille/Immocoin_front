@@ -30,13 +30,19 @@ export default function PropertiesList() {
   return (
     <div ref={propertiesRef} className="properties-section">
       <h2 className="text-center">Liste des annonces :</h2>
+      <br></br>
       {properties.map((property) => (
-        <div className="list-properties" key={property.id}>
-          <h4>{property.title}</h4>
-          <h2>{property.price} €</h2>
-          <p>{property.city} - {property.zip_code}</p>
-          <Link to={`/annonces/${property.id}`}>Lire l'annonce</Link>
-          
+        <div className="list-properties text-center" key={property.id}>
+          <img src={property.imageUrl} alt={property.title} />
+          <h2>{property.title}</h2>
+          <h6>{property.city} - ({property.zip_code})</h6>
+          <p className='mb-6'>{property.description}</p>
+          <h5 className="price">Prix TTC : {property.price} €</h5>
+          {console.log(property.id)}
+          <br></br>
+          <button className='greybtn abtn'>
+            <Link className="btn" to={`/annonces/${property.id}`}>Lire l'annonce</Link>
+          </button>
         </div>
       ))}
     </div>
